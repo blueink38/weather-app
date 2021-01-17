@@ -28,11 +28,11 @@
     <!-- start city search -->
     <div class="container">
         <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="formGroupExampleInput" class="form-label">Search for a City:</label>
+            <div class="col-md-3 mb-3">
+                <label for="cityInput" class="form-label">Search for a City:</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                    <input type="text" class="form-control" placeholder="" aria-label="Enter City Here" aria-describedby="button-addon2" id="city" value="">
+                    <button class="btn btn-outline-secondary" type="button" id="btn">Button</button>
                 </div>
         
                 <div class="list-group">
@@ -44,16 +44,33 @@
     <!-- end city search  -->
 
     <!-- start current weather display -->
-            <div class="col-md-8 mb-3">
+            <div class="col-md-9 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">City</h5>
-                        <p class="card-text">Temperature: </p>
-                        <p class="card-text">Humidity: </p>
-                        <p class="card-text">Wind Speed: </p>
-                        <p class="card-text">UV Index: </p>
+                        <h5 class="card-city">City</h5>
+                        <p class="card-temp">Temperature: </p>
+                        <p class="card-humidity">Humidity: </p>
+                        <p class="card-wind">Wind Speed: </p>
+                        <p class="card-uv">UV Index: </p>
                     </div>
-                </div>           
+                </div>    
+            <label> 5-Day Forcast</label>
+            <div class="row d-grid gap-2">
+                <div class="col-2 mb-3">
+                    <div class="card" style="width: 10rem;">
+                        <div class="card-body">
+                        <p class="card-text">Date Placeholder</p>
+ <!--                       <img src="..." class="card-img-top" alt="...">  -->
+                        <p class="card-text">Temp: </p>
+                        <p class="card-text">Humidity: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            
     </div>
     <!-- end currnet weather display -->
     <!-- start future forcast -->
