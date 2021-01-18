@@ -50,8 +50,59 @@ $(document).ready(function() {
                 });
                 $("#weather-0").show();
             });
-    };
+    }; // line 9
     // end api call for current city
 
-    // begin api call for future forcast
+
+    // begin api call for 5 day forcast
+    function display5DayForcast(city) {
+        var apiURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city +"&units=imperial&appid=" + apiKey;
+    
+        $.ajax( {
+            url: apiURL,
+            method: "GET"
+        }).then(function(response) {
+
+            // day 1
+            weatherIcon = response.weather[1].icon;
+            var date = $("#date-1").text(moment().format('l'));
+            var icon = $("#icon-1").attr("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
+
+            $("#temp-1").text(response.main.temp);
+            $("#humidity-1").text(response.main.humidity);
+
+            // day 2
+            weatherIcon = response.weather[2].icon;
+            var date = $("#date-2").text(moment().format('l'));
+            var icon = $("#icon-2").attr("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
+
+            $("#temp-2").text(response.main.temp);
+            $("#humidity-2").text(response.main.humidity);
+
+            // day 3
+            weatherIcon = response.weather[3].icon;
+            var date = $("#date-3").text(moment().format('l'));
+            var icon = $("#icon-3").attr("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
+
+            $("#temp-3").text(response.main.temp);
+            $("#humidity-3").text(response.main.humidity);
+
+            // day 4
+            weatherIcon = response.weather[4].icon;
+            var date = $("#date-4").text(moment().format('l'));
+            var icon = $("#icon-4").attr("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
+
+            $("#temp-4").text(response.main.temp);
+            $("#humidity-4").text(response.main.humidity);
+
+            // day 5
+            weatherIcon = response.weather[5].icon;
+            var date = $("#date-5").text(moment().format('l'));
+            var icon = $("icon-5").attr("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
+
+            $("#temp-5").text(response.main.temp);
+            $("#humidity-5").text(response.main.humidity);
+        }) // line 61
+    } // line 57
+    // end api call for 5 day forcast
 });
