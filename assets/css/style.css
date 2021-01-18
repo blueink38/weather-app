@@ -1,3 +1,37 @@
 body {
     font-family: 'Open Sans', sans-serif;
   }
+
+  #future-forcast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+ }
+
+ #submit-btn {
+   border-color: darkblue;
+   border-radius: 10%;
+   color: white;
+ }
+
+  /*styling for UV index conditions */
+.favorable {
+  border-radius: 10px;
+  padding: 5%;
+  background-color: green;
+  color: white;
+}
+
+.moderate {
+  border-radius: 10px;
+  padding: 5%;
+  background-color: orange;
+  color: white;
+}
+
+.severe {
+  border-radius: 10px;
+  padding: 5%;
+  background-color: red;
+  color: white;
+} 
