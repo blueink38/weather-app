@@ -11,7 +11,7 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Weather App</title>
+  <title>Weather Dashboard</title>
 </head>
 
 <body>
@@ -26,13 +26,14 @@
     <!-- end header -->
 
     <!-- start city search -->
+    <main class="flex-row justify-space-between">
     <div class="container">
         <div class="row">
             <div class="col-md-3 mb-3">
-                <label for="cityInput" class="form-label">Search for a City:</label>
+                <label for="city-input" class="form-label">Search Weather by City:</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="" aria-label="Enter City Here" aria-describedby="button-addon2" id="city" value="">
-                    <button class="btn btn-outline-secondary" type="button" id="btn">Button</button>
+                    <input type="text" class="form-control" placeholder="" aria-label="Enter City Here" aria-describedby="button-addon2" id="city-choice" value="">
+                    <button class="btn btn-outline-secondary submit" type="button" id="btn">Button</button>
                 </div>
         
                 <div class="list-group">
@@ -46,35 +47,96 @@
     <!-- start current weather display -->
             <div class="col-md-9 mb-3">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-city">City</h5>
-                        <p class="card-temp">Temperature: </p>
-                        <p class="card-humidity">Humidity: </p>
-                        <p class="card-wind">Wind Speed: </p>
-                        <p class="card-uv">UV Index: </p>
+                    <div class="card-body" id="weather-0">
+                        <h5 class="card-city">City <span>  </span></h5>
+                        <p class="card-date"><span id="date-0"></span></p>
+                        <p class="card-temp">Temperature: <span id="temp-0"></span></p>
+                        <p class="card-humidity">Humidity: <span id="humidity-0"></span></p>
+                        <p class="card-wind">Wind Speed: <span id="wind-0"></span></p>
+                        <p class="card-uv">UV Index: <span id="uv-0"></span></p>
                     </div>
                 </div>    
-            <label> 5-Day Forcast</label>
-            <div class="row d-grid gap-2">
-                <div class="col-2 mb-3">
-                    <div class="card" style="width: 10rem;">
-                        <div class="card-body">
-                        <p class="card-text">Date Placeholder</p>
- <!--                       <img src="..." class="card-img-top" alt="...">  -->
-                        <p class="card-text">Temp: </p>
-                        <p class="card-text">Humidity: </p>
+
+    <!-- 5 day forcast -->
+                <div class="container" id="future-forcast">
+                    <label> 5-Day Forcast</label>
+                    <section class="row" id="extended-forcast">
+    <!-- day 1 -->
+                    <div class="row d-grid mx-0">
+                        <div class="col-2 mb-3">
+                            <div class="card" style="width: 10rem;">
+                                <div class="card-body" id="weather-1">
+                                    <p class="card-text">Date Placeholder<span id="date-1"></p>
+                                       <img id="icon-1">
+                                    <p class="card-text">Temp: <span id="temp-0"></span></p>
+                                    <p class="card-text">Humidity: <span id="humidity-0"></span></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+    <!-- day 2 -->
+                    <div class="row d-grid mx-0">
+                        <div class="col-2 mb-3">
+                            <div class="card" style="width: 10rem;">
+                                <div class="card-body" id="weather-2">
+                                    <p class="card-text">Date Placeholder<span id="date-2"></span></p>
+                                       <img id="icon-2">
+                                    <p class="card-text">Temp: <span id="temp-2"></span></p>
+                                    <p class="card-text">Humidity: <span id="humidity-2"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+    <!-- day 3 -->
+                    <div class="row d-grid mx-0">
+                        <div class="col-2 mb-3">
+                            <div class="card" style="width: 10rem;">
+                                <div class="card-body" id="weather-3">
+                                    <p class="card-text">Date Placeholder<span id="date-3"></span></p>
+                                       <img id="icon-3">
+                                    <p class="card-text">Temp: <span id="temp-3"></span></p>
+                                    <p class="card-text">Humidity: <span id="humidity-3"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    <!-- day 4 -->
+                    <div class="row d-grid mx-0">
+                        <div class="col-2 mb-3">
+                            <div class="card" style="width: 10rem;">
+                                <div class="card-body" id="weather-4">
+                                    <p class="card-text">Date Placeholder<span id="date-4"></span></p>
+                                       <img id="icon-4">
+                                    <p class="card-text">Temp: <span id="temp-4"></span></p>
+                                    <p class="card-text">Humidity: <span id="humidity-4"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    <!-- day 5 -->
+                    <div class="row d-grid mx-0">
+                        <div class="col-2 mb-3">
+                            <div class="card" style="width: 10rem;">
+                                <div class="card-body" id="weather-5">
+                                    <p class="card-text">Date Placeholder<span id="date-5"></span></p>
+                                       <img id="icon-5"> 
+                                    <p class="card-text">Temp: <span id="temp-5"></span></p>
+                                    <p class="card-text">Humidity: <span id="humidity-5"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                </div>
+    <!-- end 5 day forcast -->
             
 
             
     </div>
-    <!-- end currnet weather display -->
-    <!-- start future forcast -->
-    <!-- end future forcast -->
+</main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
