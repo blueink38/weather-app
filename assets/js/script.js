@@ -102,7 +102,56 @@ $(document).ready(function() {
 
             $("#temp-5").text(response.main.temp);
             $("#humidity-5").text(response.main.humidity);
+
+            $("#future-forcast").show();
         }) // line 61
+        // end api call for 5 day forcast
+
+        // list of searched cities
+        function searchedCityList(city) {
+            var cityList = $("<li").text(city)
+            cityList.addClass("searched-city");
+            $("#searched-city").append(cityList);
+        }; // line 110
+
+        // clear input for new search
+        function getCities() {
+            $("#searched-city").empty();
+        };
+
+        function weather(city) {
+            displayWeather(city);
+            display5DayForcast(city);
+        };
+
+        function cityLocalStorage() {
+            var savedCities =
+            JSON.parse(localStorage.getItem("searches"));
+            if (savedCities) {
+                cities = savedCities;
+                getCities();
+            };
+        };
+        getCities();
+
+        // add click event
+        $("#submitbtn").click(function() {
+            console.log("button was clicked");
+            var cityInput = $(this).siblings("#city-choice").val().trim();
+            $("#city-choice").val("");
+            if (cityInput !=="") {
+                cities.push(cityInput);
+
+            localStorage.setItem("search", JSON.stringify(cities));
+            searched-city(cityInput);
+            };
+            weather(cityInput);
+        });
+
+        $("#searched-city").on("click", ".searched-city",
+            function() {
+                var cityButton = $(this).text();
+                weather(cityButton);
+            });
     } // line 57
-    // end api call for 5 day forcast
-});
+}); // line 3
