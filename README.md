@@ -5,7 +5,7 @@
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
-* [Setup](#setup)
+* [Website](#website)
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
@@ -15,7 +15,7 @@
 The user may choose a city and find the current and future weather at that locale.  The cities are saved for future reference
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./assets/images/weather-app-screenshot.png)
 
 ## Technologies
 * HTML5
@@ -24,12 +24,17 @@ The user may choose a city and find the current and future weather at that local
 * Bootstrap v5.0
 * OpenWeather
 
-## Setup
-Describe how to install / setup your local environement / add link to demo version.
+## Website
+https://blueink38.github.io/weather-app/
 
 ## Code Examples
 Show examples of usage:
-`put-your-code-here`
+```
+$(document).ready(function(){
+    var cities = [];
+    $("#displayCity").hide();
+    $("#extended5").hide();
+```
 
 ## Features
 * Check the current weather in a city
